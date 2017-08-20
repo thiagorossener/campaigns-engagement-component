@@ -1,0 +1,599 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.hide {
+  display: none !important;
+}
+
+.left {
+  float: left;
+}
+
+.clearfix {
+  clear: both;
+}
+
+/* ===========================================================================
+   General
+   =========================================================================== */
+
+.clickable {
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.active,
+.clickable:hover {
+  -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.16);
+  -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.16);
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.16);
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+/* ===========================================================================
+   Theme
+   =========================================================================== */
+
+.tab-total {
+  border-left-color: #FF6900;
+}
+
+.tab-total .line1,
+.tab-total-selected .line1,
+.panel-detailed h5,
+.panel-totals .column-clickable h5,
+.panel-totals .column-clickable .percentage,
+.panel-totals .column-clickable .total {
+  color: #FF6900;
+}
+
+.btn-scroll-circulo {
+  stroke: #FF6900;
+}
+
+.btn-scroll-arrow {
+  fill: #FF6900;
+}
+
+.panel-totals .percentage-bar-color {
+  background-color: #FF6900;
+}
+
+/* ===========================================================================
+   Tabs
+   =========================================================================== */
+
+.tabs {
+  display: block;
+  float: left;
+  position: relative;
+  z-index: 2;
+}
+
+.tab {
+  display: inline-block;
+  height: 100px;
+  -webkit-filter: drop-shadow(0 3px 5px rgba(0,0,0,.3));
+  -moz-filter: drop-shadow(0 3px 5px rgba(0,0,0,.3));
+  -ms-filter: drop-shadow(0 3px 5px rgba(0,0,0,.3));
+  -o-filter: drop-shadow(0 3px 5px rgba(0,0,0,.3));
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,.3));
+  cursor: pointer;
+}
+
+.tab-total {
+  position: relative;
+  float: left;
+  margin-top: 10px;
+  z-index: 4;
+}
+
+.tab-arrow-total,
+.tab-arrow-left,
+.tab-arrow-middle,
+.tab-arrow-right {
+  float: left;
+  display: inline-block;
+  height: 100%;
+}
+
+.tab-arrow-left {
+  width: 29px;
+}
+
+.tab-arrow-right {
+  width: 25px;
+}
+
+.tab-arrow-total,
+.tab-arrow-middle {
+  padding: 0px 11px;
+  background: #fff;
+  min-width: 80px;
+}
+
+.tab-arrow-total {
+  padding-left: 6px;
+}
+
+.offset-first-tab {
+  position: relative;
+  left: -5px;
+}
+
+/* ===========================================================================
+   Custom Tabs
+   =========================================================================== */
+
+.tab-total {
+  border-left-style: solid;
+  border-left-width: 8px;
+}
+
+.tab-dia-0 {
+  fill: #FF0500;
+  color: #FF0500;
+}
+
+.tab-dia-1 {
+  fill: #D60082;
+  color: #D60082;
+}
+
+.tab-dia-2 {
+  fill: #5b5daf;
+  color: #5b5daf;
+}
+
+.tab-dia-3 {
+  fill: #00B6C4;
+  color: #00B6C4;
+}
+
+/* ===========================================================================
+   Scroll Area
+   =========================================================================== */
+
+#scroll-area {
+  width: auto;
+  height: 138px;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.scroll-area-hide-left,
+.scroll-area-hide-right {
+  height: 129px;
+}
+
+.scroll-area-hide-left:before,
+.scroll-area-hide-right:after {
+  content: "";
+  width: 200px;
+  height: 137px;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+}
+
+.scroll-area-hide-left:before {
+  background: rgba(255, 255, 255, 0.0); /* Para navegadores que não suportam gradiente */
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.0), white); /* Para Safari de 5.1 a 6.0 */
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0.0), white); /* Para Opera de 11.1 a 12.0 */
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.0), white); /* Para Firefox de 3.6 a 15 */
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.0), white);
+  margin-left: -10px;
+}
+
+.scroll-area-hide-right:after {
+  background: rgba(255, 255, 255, 0.0); /* Para navegadores que não suportam gradiente */
+  background: -webkit-linear-gradient(right, rgba(255,255,255,0.0), white); /* Para Safari de 5.1 a 6.0 */
+  background: -o-linear-gradient(right, rgba(255,255,255,0.0), white); /* Para Opera de 11.1 a 12.0 */
+  background: -moz-linear-gradient(right, rgba(255,255,255,0.0), white); /* Para Firefox de 3.6 a 15 */
+  background: linear-gradient(to right, rgba(255,255,255,0.0), white);
+  right: 0;
+}
+
+/* ===========================================================================
+   Scroll Buttons
+   =========================================================================== */
+
+#btn-scroll-left,
+#btn-scroll-right {
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  top: 41px;
+  z-index: 5;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+#btn-scroll-left {
+  margin-left: 5px;
+}
+
+#btn-scroll-right {
+  right: 0px;
+}
+
+/* ===========================================================================
+   Selected Tabs
+   =========================================================================== */
+
+.tab-total-selected,
+.tab-selected {
+  display: inline-block;
+  height: 128px;
+  vertical-align: top;
+}
+
+.tab-total-selected {
+  position: relative;
+  margin-top: 10px;
+  float: left;
+  z-index: 4;
+}
+
+.tab-selected {
+  margin-left: -10px;
+}
+
+.tab-arrow-total-selected,
+.tab-arrow-left-selected,
+.tab-arrow-middle-selected,
+.tab-arrow-right-selected {
+  float: left;
+  display: inline-block;
+  height: 100%;
+}
+
+.tab-arrow-left-selected {
+  width: 35px;
+}
+
+.tab-arrow-right-selected {
+  width: 36px;
+}
+
+.tab-arrow-total-selected,
+.tab-arrow-middle-selected {
+  padding: 0px 7px 0px 8px;
+  background: #f0f0f0;
+  border-top: 1px solid #d1d1d1;
+  height: 128px;
+}
+
+.tab-arrow-total-selected {
+  border-left: 1px solid #d1d1d1;
+  padding-left: 9px;
+  padding-right: 4px;
+}
+
+/* ===========================================================================
+   Tabs Content
+   =========================================================================== */
+
+.tab-content {
+  height: 100px;
+  line-height: 34px;
+  min-width: 80px;
+}
+
+.tab-content .line1,
+.tab-content .line2 {
+  padding: 0px 5px;
+}
+
+.tab-content .line1 {
+  margin-top: 7px;
+  font-size: 18px;
+}
+
+.tab-content .line1 .percentage {
+  float: right; 
+  margin-left: 10px;
+}
+
+.tab-content hr {
+  border: 0;
+  height: 1px;
+  background-color: #d1d1d1;
+  margin: 5px;
+}
+
+.tab-content .line2 span {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0px 3px;
+}
+
+.tab-content .icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.tab-content .email {
+  color: #ff0500;
+  fill: #ff0500;
+}
+
+.tab-content .push-notification {
+  color: #008811;
+  fill: #008811;
+}
+
+.tab-content .push-notification .icon {
+  margin-top: -2px;
+}
+
+.tab-content .sms {
+  color: #00acf3;
+  fill: #00acf3;
+}
+
+.tab-content .sms .icon {
+  margin-top: -2px;
+}
+
+.tab-content .call {
+  color: #164071;
+  fill: #164071;
+}
+
+/* ===========================================================================
+   Totals Panel
+   =========================================================================== */
+
+.panel-totals {
+  display: block;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  clear: left;
+  position: relative;
+  top: -1px;
+  z-index: 1;
+  border-top-left-radius: 0;
+}
+
+.panel-totals .columns {
+  dispay: block;
+}
+
+.panel-totals .column {
+  position: relative;
+  width: 19.9%;
+  float: left;
+}
+
+.panel-totals .sep-column:after {
+  content: "";
+  width: 1px;
+  height: 100px;
+  background: #e0e0e0;
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+
+.panel-totals .content {
+  margin: 0px 10px;
+  padding: 10px 30px;
+}
+
+.panel-totals h5,
+.panel-totals span {
+  display: block;
+  margin: 0;
+  color: #888;
+}
+
+.panel-totals h5 {
+  margin-bottom: 10px;
+}
+
+.panel-totals span {
+  font-weight: normal;
+}
+
+.panel-totals .column-comum h5 {
+  font-size: 13px;
+}
+
+.panel-totals .column-comum span {
+  font-size: 35px;
+  line-height: 35px;
+}
+
+.panel-totals .column-clickable .percentage {
+  font-size: 35px;
+  line-height: 35px;
+  float: left;
+  margin-right: 8px;
+  margin-bottom: 10px;
+}
+
+.panel-totals .column-clickable .percentage-description {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.panel-totals .column-clickable .percentage-bar {
+  border-radius: 4px;
+  overflow: hidden;
+  clear: left;
+  margin-bottom: 10px;
+}
+
+.panel-totals .column-clickable .percentage-bar-fundo {
+  background-color: #ccc;
+}
+
+.panel-totals .column-clickable .total {
+  font-size: 13px;
+  clear: left;
+}
+
+/* ===========================================================================
+   Detailed Panel
+   =========================================================================== */
+
+.panel-detailed {
+  display: block;
+  padding: 15px 15px 15px 14px;
+  background-color: #f0f0f0;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  clear: left;
+  position: relative;
+  top: -1px;
+  z-index: 1;
+}
+
+.panel-detailed.init {
+  border-top-left-radius: 0;
+}
+
+.panel-detailed .columns {
+  dispay: block;
+}
+
+.panel-detailed .column {
+  position: relative;
+  width: 19%;
+  float: left;
+}
+
+.panel-detailed .sep-column {
+  border-right: 1px solid #d7d7d7;
+}
+
+.panel-detailed h5 {
+  margin: 0 15px 10px 15px;
+  padding: 4px 25px;
+}
+
+.panel-detailed .first-column h5 {
+  margin-left: 0;
+}
+
+.panel-detailed ul {
+  padding: 0;
+  margin: 0 15px;
+  list-style: none;
+}
+
+.panel-detailed .first-column ul {
+  margin-left: 0;
+}
+
+.panel-detailed li {
+  display: block;
+  font-weight: normal;
+  font-size: 13px;
+  padding: 3px 25px;
+}
+
+.panel-detailed .first-column li {
+  padding: 3px 25px;
+}
+
+.panel-detailed .icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.panel-detailed .percentage {
+  float: right;
+  border-left-style: solid;
+  border-left-width: 1px;
+  padding-left: 10px;
+  height: 15px;
+  line-height: 15px;
+  min-width: 45px;
+  font-weight: normal;
+  margin-top: 2px;
+  margin-left: 5px;
+}
+
+.panel-detailed .email {
+  color: #ff0500;
+  fill: #ff0500;
+}
+
+.panel-detailed .email .percentage {
+  border-left-color: #ff0500;
+}
+
+.panel-detailed .push-notification {
+  color: #008811;
+  fill: #008811;
+}
+
+.panel-detailed .push-notification .icon {
+  margin-top: -2px;
+}
+
+.panel-detailed .push-notification .percentage {
+  border-left-color: #008811;
+}
+
+.panel-detailed .sms {
+  color: #00acf3;
+  fill: #00acf3;
+}
+
+.panel-detailed .sms .icon {
+  margin-top: -2px;
+}
+
+.panel-detailed .sms .percentage {
+  border-left-color: #00acf3;
+}
+
+.panel-detailed .call {
+  color: #164071;
+  fill: #164071;
+}
+
+.panel-detailed .call .icon {
+  margin-top: -1px;
+}
+
+.panel-detailed .sms .call {
+  border-left-color: #164071;
+}
+
+/* ===========================================================================
+   Responsiveness
+   =========================================================================== */
+
+@media (max-width: 1400px) {
+  .panel-totals .column-clickable .percentage {
+    margin-bottom: 0;
+  }
+
+  .panel-totals .column-clickable .percentage-description {
+    float: left;
+  }
+}
